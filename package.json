@@ -1,0 +1,48 @@
+{
+  "name": "zolo-charts",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "blocks": "cd packages/blocks && npm run start",
+    "library": "cd packages/library && npm run start",
+    "start": "npm run blocks && npm run library",
+    "build": "cd packages/blocks && npm run build && cd ../library && npm run build"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.9",
+    "@babel/runtime": "^7.25.9",
+    "@types/codemirror": "^5.60.15",
+    "@types/wordpress__block-editor": "^11.5.15",
+    "@wordpress/dependency-extraction-webpack-plugin": "^6.10.0",
+    "@wordpress/scripts": "^30.3.0",
+    "babel-loader": "^9.2.1",
+    "change-case": "^5.4.4",
+    "codemirror": "^6.0.1",
+    "css-loader": "^7.1.2",
+    "mini-css-extract-plugin": "^2.9.1",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.80.4",
+    "sass-loader": "^16.0.2",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "url-loader": "^4.1.1"
+  },
+  "workspaces": [
+    "packages/library",
+    "packages/blocks"
+  ],
+  "dependencies": {
+    "apexcharts": "^4.4.0",
+    "classnames": "^2.5.1",
+    "filemanager-webpack-plugin": "^8.0.0",
+    "lodash": "^4.17.21",
+    "papaparse": "^5.5.2",
+    "react-apexcharts": "^1.7.0",
+    "react-virtualized": "^9.22.5",
+    "scriptjs": "^2.5.9",
+    "slugify": "^1.6.6",
+    "striptags": "^3.2.0",
+    "swiper": "^11.1.14"
+  }
+}

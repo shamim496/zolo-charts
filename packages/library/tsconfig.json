@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "es6",
+        "moduleResolution": "node",
+        "target": "es5",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "downlevelIteration": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "lib": [
+            "ES2021"
+        ]
+    },
+    "exclude": [
+        "build",
+        "dist",
+        "node_modules"
+    ]
+}

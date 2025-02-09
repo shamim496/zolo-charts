@@ -1,0 +1,49 @@
+name: Publish Release
+
+on:
+    push:
+        tags:
+            - '*'
+
+permissions:
+    contents: write
+
+jobs:
+    release-free:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: '20.x'
+
+            - name: Install dependencies
+              run: npm install --force
+
+            - name: Build
+              run: npm run build
+
+            - name: Create zolo-advanced-button directory and move files
+              run: |
+                  mkdir -p zolo-advanced-button &&
+                  find . -maxdepth 1 -not -name 'zolo-advanced-button' -exec mv {} zolo-advanced-button \;
+
+            - name: Archive release
+              uses: thedoctor0/zip-release@0.7.6
+              with:
+                  filename: 'zolo-advanced-button.zip'
+                  exclusions: '/*packages/* /*node_modules/* /*.distignore /*.gitignore /*.github/* /*.git/* /*.editorconfig /*README.md /*.babelrc.json /*package.json /*package-lock.json /*composer.json  /*composer.lock /*webpack.config.js /*.vscode/* /*.eslintignore /*.eslintrc.js'
+            - name: Display release
+              run: ls -a
+
+            - name: Create Release
+              uses: ncipollo/release-action@v1.14.0
+              with:
+                  artifacts: './zolo-advanced-button.zip'
+                  token: ${{ secrets.TOKEN }}
+                  removeArtifacts: true
+                  allowUpdates: true
+                  makeLatest: true
+                  tag: ${{ github.ref_name }}

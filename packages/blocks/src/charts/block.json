@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "title": "Charts",
+    "name": "zolo/charts",
+    "category": "zoloblocks",
+    "keywords": ["charts", "graph", "data", "visualization", "analytics"],
+    "description": "Add dynamic, vibrant charts for clear data representation.",
+    "apiVersion": 3,
+    "textdomain": "zoloblocks",
+    "example": {
+        "attributes": {
+            "preview": true
+        },
+        "viewportWidth": 410
+    },
+    "supports": {
+        "anchor": false,
+        "customClassName": false,
+        "align": ["wide", "full"]
+    },
+    "editorScript": "file:./index.js",
+    "style": "file:./style.css",
+    "viewScript": "file:./view.js"
+}

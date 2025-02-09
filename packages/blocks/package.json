@@ -1,0 +1,18 @@
+{
+    "scripts": {
+        "build": "wp-scripts build",
+        "start": "wp-scripts start"
+    },
+    "name": "@zolo/blocks",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bdthemes/zolo-advanced-heading.git"
+    },
+    "author": "",
+    "license": "GPL-2.0-or-later",
+    "bugs": {
+        "url": "https://github.com/bdthemes/zolo-advanced-heading/issues"
+    },
+    "homepage": "https://github.com/bdthemes/zolo-advanced-heading#readme",
+    "description": ""
+}

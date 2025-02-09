@@ -1,0 +1,195 @@
+.zolo-multi-rangle-control * {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+.zolo-multi-rangle-control {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding-bottom: 48px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge,*/
+}
+
+.top-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.zolo-multi-rangle-control .bar {
+    display: flex;
+    padding: 0 14px;
+}
+.zolo-multi-rangle-control .bar * {
+    transition: all 100ms;
+}
+.zolo-multi-rangle-control .bar.active * {
+    transition: none;
+}
+.zolo-multi-rangle-control .bar-left {
+    width: 25%;
+    background-color: #f0f0f0;
+    border-radius: 10px 0px 0px 10px;
+    padding: 1.3px 0px;
+}
+.zolo-multi-rangle-control .bar-right {
+    width: 25%;
+    background-color: #f0f0f0;
+    border-radius: 0px 10px 10px 0px;
+}
+.zolo-multi-rangle-control .bar-inner {
+    background-color: #021feb;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    justify-content: space-between;
+    position: relative;
+    justify-content: space-between;
+}
+.zolo-multi-rangle-control .bar-inner-left {
+    width: 50%;
+}
+.zolo-multi-rangle-control .bar-inner-right {
+    width: 50%;
+}
+.zolo-multi-rangle-control .thumb {
+    background-color: red;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+.zolo-multi-rangle-control .thumb::before {
+    z-index: 111;
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    top: -4px;
+    height: 10px;
+    width: 10px;
+    transform: rotate(45deg);
+    background-color: #1e1feb;
+    border-radius: 3px;
+}
+
+.zolo-multi-rangle-control .thumb::after {
+    content: "";
+    position: absolute;
+    top: -6px;
+    height: 14px;
+    width: 10px;
+    background-color: #1e1feb;
+    border-radius: 2px;
+}
+
+.zolo-multi-rangle-control .thumb-left::before {
+    left: -10px;
+}
+.zolo-multi-rangle-control .thumb-right::before {
+    right: -10px;
+}
+
+.zolo-multi-rangle-control .thumb-left::after {
+    left: -14px;
+}
+.zolo-multi-rangle-control .thumb-right::after {
+    right: -14px;
+}
+
+
+// .zolo-multi-rangle-control .input-type-range:focus + .thumb::after {
+//     content: '';
+//     position: absolute;
+//     top: -4px;
+//     left: -4px;
+//     width: 11px;
+//     height: 11px;
+//     z-index: 2;
+//     border-radius: 50%;
+//     border: dotted 1px black;
+// }
+
+.zolo-multi-rangle-control .thumb * {
+    position: absolute;
+    bottom: -37px;
+    width: 36px;
+    height: 24px;
+    font-size: 9px;
+    text-align: center;
+    line-height: 22px;
+    background-color: rgb(21, 21, 21);
+    border-radius: 4px;
+    color: white;
+    font-weight: 700;
+}
+
+
+.zolo-multi-rangle-control .thumb-left * {
+    right: -10px;
+}
+.zolo-multi-rangle-control .thumb-right * {
+    left: -10px;
+}
+
+.zolo-multi-rangle-control .thumb:active * {
+    display: block;
+}
+.input-type-range {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.zolo-multi-rangle-control .ruler {
+    margin: 10px 0px -5px 0px;
+    display: flex;
+    /* display: none; */
+}
+.zolo-multi-rangle-control .ruler .ruler-rule {
+    border-left: solid 1px;
+    border-bottom: solid 1px;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 5px 0px;
+}
+
+.zolo-multi-rangle-control .ruler .ruler-rule:last-child {
+    border-right: solid 1px;
+}
+
+.zolo-multi-rangle-control .label {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    margin-top: 10px;
+    margin-bottom: -20px;
+}
+
+.zolo-multi-rangle-control .thumb *::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+
+}
+
+// .zolo-multi-rangle-control .thumb.active:before,
+// .zolo-multi-rangle-control .thumb.active:focus:before {
+//     box-shadow: 0px 0px 12px 0px  #2a7cba;
+// }
