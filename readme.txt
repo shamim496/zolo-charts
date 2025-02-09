@@ -69,6 +69,10 @@ No. With this plugin, you will actually replace all popular page builder plugins
 
 == Screenshots ==
 
+1. **Charts Interface** - The interactive charts that engages visitors.
+2. **Settings Page** - Configure your charts settings for better customization.
+3. **Responsive Design** - The plugin works seamlessly on both desktop and mobile devices
+
 == Changelog =
 
   **= 1.0.0 - 10-12-2024 =**
