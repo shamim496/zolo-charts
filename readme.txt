@@ -30,8 +30,6 @@ The **Charts** block lets you design stylish, customizable WordPress buttons wit
 3. Select the Charts zip file and proceed to install
 4. Activate Charts.
 
-
-
 == Upgrade Notice ==
 
 There are no requirement for upgrade notice. Just click the update button and updated the plugin.
