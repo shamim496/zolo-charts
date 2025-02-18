@@ -12,3 +12,48 @@
 .zolo-e-icon {
     color: #2677ff;
 }
+
+// text gradient style
+.zolo-text-gradient-color {
+    .zolo-ah-title {
+      .zolo-ah-main-title,
+      .zolo-ah-main-title div {
+        display: inline-block;
+        background: -webkit-linear-gradient(45deg, #09009f, #00ff95 80%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+  
+  .zolo-side-premium-notice-wrap {
+    --zolo-mask-shadow: 30%;
+    position: relative;
+    img {
+      mask-image: linear-gradient(
+        rgba(16, 16, 16, 0.30) var(--zolo-mask-shadow),
+        rgba(0, 0, 0, 0)
+      );
+      height: 350px;
+      pointer-events: none;
+    }
+    .zolo-side-premium-notice {
+      background-color: transparent;
+      border: 0;
+      padding: 30px;
+      text-align: center;
+      position: absolute;
+      bottom: -90px;
+      .zolo-premium-icon {
+        background-color: transparent;
+        border: 0;
+        height: 100px;
+        padding: 0;
+        width: 100px;
+      }
+    }
+  }
+  

@@ -6,13 +6,13 @@
     "name": "@zolo/blocks",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/bdthemes/zolo-advanced-heading.git"
+        "url": "git+https://github.com/bdthemes/zolo-charts.git"
     },
     "author": "",
     "license": "GPL-2.0-or-later",
     "bugs": {
-        "url": "https://github.com/bdthemes/zolo-advanced-heading/issues"
+        "url": "https://github.com/bdthemes/zolo-charts/issues"
     },
-    "homepage": "https://github.com/bdthemes/zolo-advanced-heading#readme",
+    "homepage": "https://github.com/bdthemes/zolo-charts#readme",
     "description": ""
 }
