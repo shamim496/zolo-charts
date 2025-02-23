@@ -3,7 +3,6 @@
 namespace ZoloLibrary\Includes;
 
 use ZoloLibrary\Includes\SingletonTrait;
-use Zolo\Helpers\ZoloHelpers;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -22,21 +21,13 @@ if (!class_exists('ZoloLibrary\Includes\StyleGenerator')) {
 
             // Generate Style on block render
             add_filter('render_block', [$this, 'generate_style_on_render_block'], 10, 2);
-
-            // Enqueue Dynamic Styles
-            if (wp_is_block_theme()) {
-                add_action('wp_head', [$this, 'output_dynamic_styles']);
-            } else {
-                add_action('wp_footer', [$this, 'output_dynamic_styles']);
+            if (!is_admin()) {
+                add_action('wp_enqueue_scripts', [$this, 'output_dynamic_styles']);
             }
         }
 
         public function generate_style_on_render_block($block_content, $block) {
             if (isset($block['blockName']) && str_contains($block['blockName'], 'zolo/')) {
-                // echo '<pre>';
-                // print_r($block);
-                // echo '</pre>';
-                // die;
                 do_action('zolo_block_render_block', $block);
                 if (isset($block['attrs']['zoloStyles'])) {
                     $style = $this->zolo_generate_style($block['attrs']['zoloStyles']);
@@ -73,8 +64,9 @@ if (!class_exists('ZoloLibrary\Includes\StyleGenerator')) {
         }
 
         public function output_dynamic_styles() {
+            wp_enqueue_style('zolo-block-inline-styles', true);
             if (!empty($this->dynamic_styles)) {
-                echo '<style id="zolo-block-inline-styles">' . $this->dynamic_styles . '</style>'; // phpcs:ignore
+                wp_add_inline_style('zolo-block-inline-styles', $this->dynamic_styles);
             }
         }
     }
