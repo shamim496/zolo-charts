@@ -72,6 +72,7 @@ class ZoloCharts {
             wp_enqueue_script('zolo-library-script', plugins_url('dist/zoloLibrary.js', __FILE__), $args['dependencies'], $args['version'], true);
         }
     }
+    
     public function enqueue_front_scripts() {
         if (!is_admin()) {
             // Enqueue front end scripts
