@@ -48,10 +48,8 @@ class ZoloCharts {
         add_action('enqueue_block_assets', [$this, 'enqueue_editor_assets']);
         add_filter('block_categories_all', [$this, 'add_custom_block_category']);
         add_action('init', [$this, 'register_blocks']);
-        if (!is_admin()) {
-            add_action('wp_enqueue_scripts', [$this, 'enqueue_front_scripts']);
-        }
     }
+
     private function include_files() {
         $includes_dir = ZOLO_CHARTS_DIR_PATH . 'includes/';
         $files = ['SingletonTrait.php', 'StyleGenerator.php'];
@@ -70,12 +68,6 @@ class ZoloCharts {
             $args = file_exists($asset_path) ? require $asset_path : ['dependencies' => [], 'version' => ZOLO_CHARTS_VERSION];
             wp_enqueue_style('zolo-library-style', plugins_url('dist/zoloLibrary.css', __FILE__), [], $args['version']);
             wp_enqueue_script('zolo-library-script', plugins_url('dist/zoloLibrary.js', __FILE__), $args['dependencies'], $args['version'], true);
-        }
-    }
-    
-    public function enqueue_front_scripts() {
-        if (!is_admin()) {
-            // Enqueue front end scripts
         }
     }
 
