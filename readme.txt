@@ -13,6 +13,23 @@ The **Charts** block lets you design stylish, customizable WordPress buttons wit
 
 == Description ==
 
+Chart Blocks for Gutenberg is a plugin that adds customizable chart and graph blocks to the WordPress block editor. With this plugin, users can easily embed interactive charts (bar, line, pie, etc.) into their posts or pages to display data in a visually appealing format.
+
+== Accessing the Source Code ==
+
+You can find the source code for this plugin on GitHub:
+[GitHub Repository Link] - https://github.com/shamim496/zolo-charts.git
+
+**Key Features:**
+
+- Multiple Chart Types: Choose from bar charts, line charts, pie charts, and more.
+- Fully Customizable: Customize chart colors, titles, axes, labels, and more.
+- Responsive Design: Charts automatically adjust to fit any screen size.
+- Data Inputs: Easily input data manually or upload CSV files for automatic chart generation.
+- Interactive Charts: Hover effects, tooltips, and more.
+- Live Data Integration: Integrate external APIs for live data charts (advanced users).
+- Export Options: Allow users to download charts as images (PNG, SVG).
+
 == Installation ==
 
 = Plugin Installation Method: =
@@ -76,7 +93,7 @@ No. With this plugin, you will actually replace all popular page builder plugins
 == Changelog =
 
   **= 1.0.0 - 10-12-2024 =**
-  - **Initial Released
+  - Initial Released
 
 To build the plugin:
 
