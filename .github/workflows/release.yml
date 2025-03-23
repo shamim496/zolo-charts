@@ -25,15 +25,15 @@ jobs:
             - name: Build
               run: npm run build
 
-            - name: Create zolo-advanced-button directory and move files
+            - name: Create zolo-charts directory and move files
               run: |
-                  mkdir -p zolo-advanced-button &&
-                  find . -maxdepth 1 -not -name 'zolo-advanced-button' -exec mv {} zolo-advanced-button \;
+                  mkdir -p zolo-charts &&
+                  find . -maxdepth 1 -not -name 'zolo-charts' -exec mv {} zolo-charts \;
 
             - name: Archive release
               uses: thedoctor0/zip-release@0.7.6
               with:
-                  filename: 'zolo-advanced-button.zip'
+                  filename: 'zolo-charts.zip'
                   exclusions: '/*packages/* /*node_modules/* /*.distignore /*.gitignore /*.github/* /*.git/* /*.editorconfig /*README.md /*.babelrc.json /*package.json /*package-lock.json /*composer.json  /*composer.lock /*webpack.config.js /*.vscode/* /*.eslintignore /*.eslintrc.js'
             - name: Display release
               run: ls -a
@@ -41,7 +41,7 @@ jobs:
             - name: Create Release
               uses: ncipollo/release-action@v1.14.0
               with:
-                  artifacts: './zolo-advanced-button.zip'
+                  artifacts: './zolo-charts.zip'
                   token: ${{ secrets.TOKEN }}
                   removeArtifacts: true
                   allowUpdates: true
